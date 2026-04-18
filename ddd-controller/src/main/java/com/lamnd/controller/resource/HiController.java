@@ -18,4 +18,8 @@ public class HiController {
         return eventAppService.sayHi("Lam");
     }
 
+    @GetMapping("/hi2")
+    public String hello2() {
+        return eventAppService.sayHi("Lam2");
+    }
 }

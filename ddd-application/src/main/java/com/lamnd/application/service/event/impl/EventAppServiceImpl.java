@@ -1,13 +1,18 @@
 package com.lamnd.application.service.event.impl;
 
 import com.lamnd.application.service.event.EventAppService;
+import com.lamnd.domain.service.HiDomainService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EventAppServiceImpl implements EventAppService {
 
+    @Autowired
+    private HiDomainService hiDomainService;
+
     @Override
     public String sayHi(String who) {
-        return "Hello " + who;
+        return hiDomainService.sayHi(who);
     }
 }
