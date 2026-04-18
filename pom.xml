@@ -11,6 +11,9 @@
     <modules>
         <module>ddd-start</module>
         <module>ddd-controller</module>
+        <module>ddd-application</module>
+        <module>ddd-infrastructure</module>
+        <module>ddd-domain</module>
     </modules>
 
     <properties>

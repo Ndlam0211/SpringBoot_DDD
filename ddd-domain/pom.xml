@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ddd-controller</artifactId>
+    <artifactId>ddd-domain</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,11 +17,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.lamnd</groupId>
-            <artifactId>ddd-application</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 </project>
