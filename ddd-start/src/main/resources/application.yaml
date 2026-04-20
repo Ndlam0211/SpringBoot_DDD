@@ -3,3 +3,42 @@ server:
   tomcat:
     threads:
       max: 10
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  ratelimiter:
+    instances:
+      backendA:
+        limitForPeriod: 2 # Number of calls that can be made in one refresh period
+        limitRefreshPeriod: 10s # Time after which the limit counter is reset
+        timeoutDuration: 0 # Time to wait for a permission to execute a call when the limit has been reached
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 100
+      backendB:
+        limitForPeriod: 5
+        limitRefreshPeriod: 10s
+        timeoutDuration: 3s
+
+  circuitbreaker:
+    instances:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowType: TIME_BASED
+        minimumNumberOfCalls: 20
+        waitDurationInOpenState: 50s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
