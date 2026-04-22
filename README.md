@@ -1,0 +1,1 @@
+The Spring Boot project was designed using DDD architecture.
