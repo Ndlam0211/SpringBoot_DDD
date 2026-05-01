@@ -1,1 +1,1 @@
-The Spring Boot project was designed using DDD architecture.
+The Spring Boot project was designed using DDD architecture and multi modules.
